@@ -11,5 +11,7 @@ RUN echo "$(date +'%Y-%m-%d %H:%M:%S')    docker build start" >> /home/$USERNAME
 
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME
 
+RUN apt update && apt install libnss-myhostname
+
 # log the docker build complete
 RUN echo "$(date +'%Y-%m-%d %H:%M:%S')    docker build complete" >> /home/$USERNAME/status
